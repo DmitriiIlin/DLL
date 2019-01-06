@@ -69,13 +69,15 @@ class LinkedList:
                 if all==False:
                     break
             elif (node.value == val) and (self.tail!=node):
+                node_next=node.next
                 node_pr.next=node.next
+                node_next.prev=node_pr
                 if all==False:
                     break
             elif (node.value==self.tail.value) and (node.value==val):
                 self.tail=node_pr
                 node_pr.next=None
-                self.next=node_pr.next
+  #              self.next=node_pr.next
                 if all==False:
                     break
             if node.value!=val:
@@ -113,9 +115,12 @@ class LinkedList:
             self.tail=newNode
             afterNode.next=newNode
             newNode.next=None
+            newNode.prev=afterNode
             self.tail=newNode
         elif (self.head!=None) and (afterNode!=self.tail):
             newNode.next=afterNode.next
+            next_Node=Node(newNode.next)
+            next_Node.prev=newNode
             afterNode.next=newNode 
         else:
             return None   
@@ -154,5 +159,4 @@ def add_linked_lists(list_1,list_2):
         return sum_linked_list     
     else:
         return None
-
 
