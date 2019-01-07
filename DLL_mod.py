@@ -9,7 +9,7 @@ class Node:
         self.prev=None
         self.next = None
     
-class LinkedList:  
+class LinkedList2:  
 
     def __init__(self):
         #Инициализация класса Doubled Linked List
@@ -30,7 +30,7 @@ class LinkedList:
         # Метод класса DLL, позволяющий вывести э-ты DLL 
         node=self.head
         while node!=None:
-            print(node.value,'вывод print all nodes')
+            print(node.value,node.prev,node.next,'вывод print all nodes')
             node=node.next
 
     def find(self, val):
@@ -120,8 +120,10 @@ class LinkedList:
         elif (self.head!=None) and (afterNode!=self.tail):
             newNode.next=afterNode.next
             next_Node=Node(newNode.next)
+            newNode.prev=afterNode
             next_Node.prev=newNode
             afterNode.next=newNode 
+            
         else:
             return None   
     
@@ -137,6 +139,7 @@ class LinkedList:
             self.head = newNode
             newNode.next=next_node
             newNode.prev=None
+            next_node.prev=newNode
         
 
 
@@ -144,7 +147,7 @@ class LinkedList:
 def add_linked_lists(list_1,list_2):
 # Функция складывающая значения двух LL при условии равенства длин и равенства содержания знач.==int
     if list_1.len()==list_2.len():
-        sum_linked_list=LinkedList()
+        sum_linked_list=LinkedList2()
         sum_node=None
         node_1=list_1.head
         node_2=list_2.head
@@ -159,4 +162,5 @@ def add_linked_lists(list_1,list_2):
         return sum_linked_list     
     else:
         return None
+
 

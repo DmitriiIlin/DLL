@@ -15,7 +15,7 @@ class Linked_List_2_Tests(unittest.TestCase):
 
     def test_add_in_tail_in_empty_list(self):
         # Проверка add_in_tail при пустом списке
-        LL_1=DLL_mod.LinkedList()
+        LL_1=DLL_mod.LinkedList2()
         i=random_number()
         Node=Node_create(i)
         if LL_1.len()==0:
@@ -25,7 +25,7 @@ class Linked_List_2_Tests(unittest.TestCase):
 
     def test_add_in_tail_with_one_element(self):
         # Проверка add_in_tail для списка с одним элементом
-        LL_1=DLL_mod.LinkedList()
+        LL_1=DLL_mod.LinkedList2()
         data=[]
         for i in range(0,2):
             j=random_number()
@@ -39,7 +39,7 @@ class Linked_List_2_Tests(unittest.TestCase):
 
     def test_add_in_tail_in_random_len_ll(self):
         #Проверка add_in_tail для списка слючайной длины
-        LL_1=DLL_mod.LinkedList()
+        LL_1=DLL_mod.LinkedList2()
         data=[]
         random_len=random.randint(5,10)
         random_number=random.randint(1,random_len-1)
@@ -59,7 +59,7 @@ class Linked_List_2_Tests(unittest.TestCase):
     
     def test_find(self):
         # Тест метода find
-        LL_1=DLL_mod.LinkedList()
+        LL_1=DLL_mod.LinkedList2()
         data=[]
         random_len=random.randint(5,10)
         random_number=random.randint(1,random_len-1)
@@ -74,7 +74,7 @@ class Linked_List_2_Tests(unittest.TestCase):
 
     def test_find_all(self):
         # Тест метода find_all
-        LL_1=DLL_mod.LinkedList()
+        LL_1=DLL_mod.LinkedList2()
         data=[]
         result=[]
         test_len=30
@@ -100,7 +100,7 @@ class Linked_List_2_Tests(unittest.TestCase):
  
     def test_delete(self):
         #Удаление первого и последнего эл-тов
-        LL_1=DLL_mod.LinkedList()
+        LL_1=DLL_mod.LinkedList2()
         data=[]
         test_len=10
         for i in range(0,test_len):
@@ -123,7 +123,7 @@ class Linked_List_2_Tests(unittest.TestCase):
 
     def tast_random_delete(self):
         #Удаление случайного эл-та
-        LL_1=DLL_mod.LinkedList()
+        LL_1=DLL_mod.LinkedList2()
         data=[]
         test_len=random.randint(5,10)
         number_for_delete=random.randint(1,len(test_len)-1)
@@ -145,7 +145,7 @@ class Linked_List_2_Tests(unittest.TestCase):
 
     def test_clean(self):
         #Очистка 
-        LL_1=DLL_mod.LinkedList()
+        LL_1=DLL_mod.LinkedList2()
         data=[]
         test_len=random.randint(5,10)
         for i in range(0,test_len):
@@ -163,7 +163,7 @@ class Linked_List_2_Tests(unittest.TestCase):
 
     def test_insert_in_empty_list(self):
         # Проверка ф-ции insert при пустом списке
-        LL_1=DLL_mod.LinkedList()
+        LL_1=DLL_mod.LinkedList2()
         i=random_number()
         Node=Node_create(i)
         if LL_1.len()==0:
@@ -176,7 +176,7 @@ class Linked_List_2_Tests(unittest.TestCase):
     def test_insert_with_one_element(self):
         #Проверка ф-ции insert для списка с 1 элементом. Вставка э-та после первого
         #э-та, далее вставка после предварительно вставленного эл-та. 
-        LL_1=DLL_mod.LinkedList()
+        LL_1=DLL_mod.LinkedList2()
         Q_ty=3
         data=[]
         for i in range (0,Q_ty):
@@ -193,7 +193,7 @@ class Linked_List_2_Tests(unittest.TestCase):
 
     def test_insert_in_last_position(self):
         #Вставка в конец списка
-        LL_1=DLL_mod.LinkedList()
+        LL_1=DLL_mod.LinkedList2()
         data=[]
         for i in range(0,10):
             data.append(random_number())
@@ -211,7 +211,7 @@ class Linked_List_2_Tests(unittest.TestCase):
 
     def test_insert_in_random_position(self):
        #Вставка в случайную позицию, случайного значения
-        LL_1=DLL_mod.LinkedList()
+        LL_1=DLL_mod.LinkedList2()
         data=[]
         random_len=random.randint(5,10)
         random_number=random.randint(1,random_len-1)
@@ -237,7 +237,7 @@ class Linked_List_2_Tests(unittest.TestCase):
         
     def test_add_in_head_in_empty_list(self):
         #Тест на добавление в пустой список
-        LL_1=DLL_mod.LinkedList()
+        LL_1=DLL_mod.LinkedList2()
         i=random_number()
         Node=Node_create(i)
         LL_1.add_in_head(Node)
@@ -246,7 +246,7 @@ class Linked_List_2_Tests(unittest.TestCase):
 
     def test_add_in_head_with_one_element(self):
         #Тест на добавление э-та в список с уже существующим одним э-том
-        LL_1=DLL_mod.LinkedList()
+        LL_1=DLL_mod.LinkedList2()
         i=random_number()
         j=random_number()
         data=[]
@@ -263,7 +263,7 @@ class Linked_List_2_Tests(unittest.TestCase):
 
     def test_add_in_head_with_random_len(self):
         #Тест на вставку э-та на первую позицию при случайной длине списка
-        LL_1=DLL_mod.LinkedList()
+        LL_1=DLL_mod.LinkedList2()
         data=[]
         random_len=random.randint(5,10)
         insert_value=random.randint(1,99)
