@@ -65,6 +65,7 @@ class LinkedList2:
                 break
             if (node.value==self.head.value) and (node.value==val):
                 new_head=node.next
+                new_head.prev=None
                 self.head=new_head
                 if all==False:
                     break
