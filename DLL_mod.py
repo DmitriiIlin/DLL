@@ -112,18 +112,23 @@ class LinkedList2:
             newNode.next=None
             self.head=newNode
             self.tail=newNode
-        elif (self.head!=None) and (afterNode==self.tail) and (afterNode!=None):
+        elif (self.head!=None) and (afterNode==self.tail):
             afterNode.next=newNode
             newNode.next=None
             newNode.prev=afterNode
             self.tail=newNode
-        elif (self.head!=None) and (afterNode!=self.tail) and (afterNode!=None):
+        elif (self.head!=None) and (afterNode==None):
+            node=self.tail
+            newNode.prev=node
+            newNode.next=None
+            node.next=newNode
+            self.tail=newNode
+        elif (self.head!=None) and (afterNode!=self.tail):
             next_Node=afterNode.next
             newNode.next=next_Node
             newNode.prev=afterNode
             next_Node.prev=newNode
-            afterNode.next=newNode 
-            
+            afterNode.next=newNode      
         else:
             return None   
     
@@ -163,4 +168,19 @@ def add_linked_lists(list_1,list_2):
     else:
         return None
 
-
+a=LinkedList2()
+node_0=Node(1)
+node_1=Node(2)
+node_2=Node(3)
+node_3=Node(4)
+node_4=Node(5)
+a.add_in_tail(node_0)
+#a.add_in_tail(node_1)
+#a.add_in_tail(node_2)
+#a.add_in_tail(node_3)
+#a.add_in_tail(node_4)
+#a.print_all_nodes()
+print("####")
+a.insert(None,Node(50))
+#a.insert(node_2,Node(70))
+a.print_all_nodes()
