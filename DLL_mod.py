@@ -112,15 +112,14 @@ class LinkedList2:
             newNode.next=None
             self.head=newNode
             self.tail=newNode
-        elif (self.head!=None) and (afterNode==self.tail):
-            self.tail=newNode
+        elif (self.head!=None) and (afterNode==self.tail) and (afterNode!=None):
             afterNode.next=newNode
             newNode.next=None
             newNode.prev=afterNode
             self.tail=newNode
-        elif (self.head!=None) and (afterNode!=self.tail):
-            newNode.next=afterNode.next
-            next_Node=Node(newNode.next)
+        elif (self.head!=None) and (afterNode!=self.tail) and (afterNode!=None):
+            next_Node=afterNode.next
+            newNode.next=next_Node
             newNode.prev=afterNode
             next_Node.prev=newNode
             afterNode.next=newNode 
